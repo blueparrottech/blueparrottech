@@ -1,37 +1,17 @@
-name: Sync Repo to Vercel Deployment Repo
+name: Deploy to Vercel via Deploy Hook
 
 on:
   push:
     branches:
-      - master  # Trigger on changes to the 'master' branch
+      - master  # Or the branch you want to deploy
 
 jobs:
-  sync:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Git
-      run: |
-        git config user.name "GitHub Actions"
-        git config user.email "github-actions@github.com"
-    - name: Add Vercel Deployment Repo as a remote
-      run: |
-        git remote add vercel https://$TOKEN@github.com/blueparrottech/blueparrottech.git
+    - name: Trigger Vercel Deploy Hook
       env:
-        TOKEN: ${{ secrets.VERCELREPO_TOKEN }}  # PAT stored as a secret
-
-    - name: Push changes to Vercel Deployment Repo
+        DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
       run: |
-        # Check for changes and push if there are any
-        if [[ -n "$(git status --porcelain)" ]]; then
-          git add .
-          git commit -m "Mirror changes to Vercel deployment repo"
-          git push vercel master --force
-        else
-          echo "No changes to commit and push"
-        fi
-      env:
-        TOKEN: ${{ secrets.VERCELREPO_TOKEN }}
+        curl -X POST $DEPLOY_HOOK_URL
