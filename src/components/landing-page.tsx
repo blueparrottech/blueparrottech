@@ -13,7 +13,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="relative h-[20vh] md:h-[50vh] bg-blue-500">
         <Image
-          src="/hero.jpg?height=1080&width=1920"
+          src="/hero.JPG?height=1080&width=1920"
           alt="Dighero"
           layout="fill"
           objectFit="cover"
