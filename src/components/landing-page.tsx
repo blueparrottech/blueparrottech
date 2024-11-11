@@ -27,7 +27,7 @@ export default function LandingPage() {
       {/* Text Section */}
       <section className="max-w-3xl mx-auto px-4 py-12 md:py-4 space-y-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center">
-          BlueParrotTech
+          BlueParrotTech - Tools TaoBao
         </h2>
 
         <ToolGrid />
