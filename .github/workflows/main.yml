@@ -20,7 +20,7 @@ jobs:
 
     - name: Add Repo 2 as a remote
       env:
-        TOKEN: ${{ secrets.REPO2_TOKEN }}
+        TOKEN: ${{ secrets.VERCELREPO }}
       run: |
         git remote add repo2 https://$TOKEN@github.com/blueparrottech/blueparrottech.git
 
