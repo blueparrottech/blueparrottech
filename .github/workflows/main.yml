@@ -26,7 +26,7 @@ jobs:
 
     - name: Push changes to Repo 2
       run: |
-        git push repo2 main --force
+        git push repo2 master --force
 
     - name: Trigger Vercel Deploy Hook
       env:
