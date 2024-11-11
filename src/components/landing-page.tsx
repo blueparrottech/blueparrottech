@@ -11,7 +11,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-red-50 text-gray-900 font-serif">
       {/* Hero Section */}
-      <section className="relative h-[20vh] md:h-[50vh] bg-red-500">
+      <section className="relative h-[20vh] md:h-[50vh] bg-blue-500">
         <Image
           src="/hero.jpg?height=1080&width=1920"
           alt="Dighero"
