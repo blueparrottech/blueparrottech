@@ -14,7 +14,7 @@ export default function ToolGrid() {
 
       <ToolCard
         title="PDF Converter"
-        description="Convert your documents to PDF format with ease"
+        description="Convert yoour documents to PDF format with ease"
         content="Our PDF converter tool allows you to quickly and easily convert various file formats to PDF. Whether you have Word documents, Excel spreadsheets, or PowerPoint presentations, our tool ensures high-quality conversions while maintaining the original formatting."
         buttonText="Convert to PDF"
         icon={FileText}
