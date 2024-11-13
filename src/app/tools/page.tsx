@@ -1,17 +1,9 @@
 import  ToolCard  from './tool-card'
 import { FileText, FileUp } from 'lucide-react'
-import Link from 'next/link';
-
-
 
 export default function ToolGrid() {
   return (
-
-
     <div className="grid md:grid-cols-3 gap-6">
-
-<Link href="./tools/pdf">
-
       <ToolCard
         title="PDF Converter"
         description="Convert your documents to PDF format with ease"
@@ -19,10 +11,6 @@ export default function ToolGrid() {
         buttonText="Convert to PDF"
         icon={FileText}
       />
- </Link>
-
-
-
       <ToolCard
         title="Image Resizer"
         description="Resize your images without losing quality"
@@ -30,8 +18,6 @@ export default function ToolGrid() {
         buttonText="Resize Image"
         icon={FileUp}
       />
-
-
 
 <ToolCard
         title="Image Resizer"
