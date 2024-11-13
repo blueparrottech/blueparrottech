@@ -14,8 +14,8 @@ const PDFConverter = () => {
   const [error, setError] = useState("");
   const { isLoaded, userId } = useAuth();
 
-  const handleFileSelect = (event) => {
-    const file = event.target.files[0];
+  const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file && file.type === 'application/pdf') {
       setSelectedFile(file);
       setError("");
@@ -24,7 +24,6 @@ const PDFConverter = () => {
       setSelectedFile(null);
     }
   };
-
  
 
 
