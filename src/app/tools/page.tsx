@@ -1,4 +1,5 @@
-import  ToolCard  from './tool-card'
+'use client'
+import  ToolCard  from '@/components//tool-card'
 import { FileText, FileUp } from 'lucide-react'
 
 export default function ToolGrid() {
