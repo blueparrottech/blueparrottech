@@ -1,6 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { storeFormData } from './eulogyFormHandler';
+
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,6 +12,14 @@ import { Progress } from "@/components/ui/progress"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Info } from 'lucide-react'
+
+
+
+interface EulogyFormProps {
+  storeFormData: (formData: FormData) => Promise<void>;
+}
+
+
 
 type FormData = {
   fullName: string
@@ -63,7 +74,7 @@ const sections = [
   "Additional Information"
 ]
 
-export default function EulogyForm() {
+export default function EulogyForm({ storeFormData }: EulogyFormProps) {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [currentSection, setCurrentSection] = useState(0)
   const [errors, setErrors] = useState<Partial<FormData>>({})
@@ -99,13 +110,50 @@ export default function EulogyForm() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     if (validateForm()) {
-      console.log('Form submitted:', formData)
-      // Here you would typically send the data to an API
+      try {
+        const response = await fetch('/api/eulogy', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          console.log('Form data stored successfully!');
+          // Clear the form or redirect the user
+        } else {
+          const errorData = await response.json();
+          console.error('Error storing form data:', errorData.error);
+          // Display an error message to the user
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        // Display an error message to the user
+      }
     }
-  }
+  };
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
   const handleSaveDraft = () => {
     localStorage.setItem('eulogyFormDraft', JSON.stringify(formData))

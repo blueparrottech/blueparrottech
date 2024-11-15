@@ -22,6 +22,9 @@ export default function ToolGrid() {
  </Link>
 
 
+
+
+
  <Link href="./tools/eulogygenerator">
       <ToolCard
         title="Eulogy Generator"
@@ -33,14 +36,17 @@ export default function ToolGrid() {
  </Link>
 
 
-<ToolCard
-        title="Image Resizer"
-        description="Resize your images without losing quality"
+
+
+ <Link href="./tools/test"> 
+ <ToolCard
+        title="test db"
+        description="test db"
         content="Our image resizer tool helps you quickly adjust the dimensions of your images without compromising on quality. Perfect for social media posts, web graphics, or email attachments, this tool ensures your images look great at any size."
         buttonText="Resize Image"
         icon={FileUp}
       />
-
+ </Link>
 
 <ToolCard
         title="Image Resizer"
