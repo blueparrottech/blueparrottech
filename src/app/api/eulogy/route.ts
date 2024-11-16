@@ -6,6 +6,32 @@ export const config = {
   runtime: 'edge',
 };
 
+
+
+type FormData = {
+  fullName: string
+  relationship: string
+  dateOfBirth: string
+  dateOfPassing: string
+  placeOfBirth: string
+  familyMembers: string
+  profession: string
+  careerAchievements: string
+  hobbies: string
+  joyfulActivities: string
+  definingQualities: string
+  personalStory: string
+  communityImpact: string
+  charities: string
+  favoriteSayings: string
+  lifeValues: string
+  rememberedFor: string
+  additionalInfo: string
+}
+
+
+
+
 export async function POST(request: Request): Promise<NextResponse> {
   try {
     const formData: FormData = await request.json();
