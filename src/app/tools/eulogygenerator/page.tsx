@@ -15,9 +15,6 @@ import { Info } from 'lucide-react'
 
 
 
-interface EulogyFormProps {
-  storeFormData: (formData: FormData) => Promise<void>;
-}
 
 
 
@@ -74,7 +71,7 @@ const sections = [
   "Additional Information"
 ]
 
-export default function EulogyForm({ storeFormData }: EulogyFormProps) {
+export default function EulogyForm() {
   const [formData, setFormData] = useState<FormData>(initialFormData)
   const [currentSection, setCurrentSection] = useState(0)
   const [errors, setErrors] = useState<Partial<FormData>>({})

@@ -24,7 +24,7 @@ export default function LandingPage() {
             playsInline
             preload="metadata"
           >
-            Imagine AI Art Generator
+            LimeParrot TechSite
           </video>
         </div>
 
@@ -50,7 +50,7 @@ export default function LandingPage() {
       {/* Text Section */}
       <section className="max-w-3xl mx-auto px-4 py-12 md:py-4 space-y-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center">
-          BlueParrotTech - Tools TaoBao
+          LimeParrot TechSite - Tools and Content to win
         </h2>
 
         <ToolGrid />
