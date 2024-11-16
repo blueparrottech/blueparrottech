@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { format } from 'date-fns'
 
 interface Eulogy {
@@ -17,6 +17,7 @@ interface Eulogy {
 
 export default function EulogyDashboard() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [eulogies, setEulogies] = useState<Eulogy[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -57,7 +58,7 @@ export default function EulogyDashboard() {
         </div>
 
         {/* Success Message (show only when redirected from form submission) */}
-        {router.query?.new && (
+        {searchParams.get('new') && (
           <div className="mb-8 bg-green-50 p-4 rounded-md">
             <div className="flex">
               <div className="flex-shrink-0">
