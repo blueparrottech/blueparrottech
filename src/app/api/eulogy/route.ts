@@ -1,7 +1,10 @@
 // pages/api/eulogy.ts
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
-import   FormData   from './tools/eulogygenerator/types'
+import   FormData   from '../../eulogygenerator/types'
+
+
+
 export const config = {
   runtime: 'edge',
 };
