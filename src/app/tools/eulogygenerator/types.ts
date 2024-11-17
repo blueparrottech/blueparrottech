@@ -1,6 +1,6 @@
 // types/eulogy.ts
 
-export type FormData = {
+export  type FormData = {
     // User identification fields
     userId: string
     userEmail: string
