@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
  
-
+import {  useUser } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,52 +13,11 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { Info } from 'lucide-react'
 
+import { FormData, initialFormData } from './types'
 
+import { useSearchParams, useRouter } from 'next/navigation'  // Note: from 'next/navigation', not 'next/router'
 
-
-
-
-type FormData = {
-  fullName: string
-  relationship: string
-  dateOfBirth: string
-  dateOfPassing: string
-  placeOfBirth: string
-  familyMembers: string
-  profession: string
-  careerAchievements: string
-  hobbies: string
-  joyfulActivities: string
-  definingQualities: string
-  personalStory: string
-  communityImpact: string
-  charities: string
-  favoriteSayings: string
-  lifeValues: string
-  rememberedFor: string
-  additionalInfo: string
-}
-
-const initialFormData: FormData = {
-  fullName: '',
-  relationship: '',
-  dateOfBirth: '',
-  dateOfPassing: '',
-  placeOfBirth: '',
-  familyMembers: '',
-  profession: '',
-  careerAchievements: '',
-  hobbies: '',
-  joyfulActivities: '',
-  definingQualities: '',
-  personalStory: '',
-  communityImpact: '',
-  charities: '',
-  favoriteSayings: '',
-  lifeValues: '',
-  rememberedFor: '',
-  additionalInfo: ''
-}
+ 
 
 const sections = [
   "Basic Information",
@@ -72,9 +31,20 @@ const sections = [
 ]
 
 export default function EulogyForm() {
-  const [formData, setFormData] = useState<FormData>(initialFormData)
+  const [formData, setFormData] = useState<Omit<FormData, 'userId' | 'userEmail'>>(initialFormData)
   const [currentSection, setCurrentSection] = useState(0)
   const [errors, setErrors] = useState<Partial<FormData>>({})
+
+  const router = useRouter()
+
+
+  const { user } = useUser();
+console.log('useruseruseruseruser:', user?.emailAddresses[0].emailAddress);
+console.log(':');
+
+console.log(':');
+console.log('useruseruseruseruser:',  user?.id);
+
 
   useEffect(() => {
     const savedData = localStorage.getItem('eulogyFormData')
@@ -111,17 +81,36 @@ export default function EulogyForm() {
     e.preventDefault();
     if (validateForm()) {
       try {
+
+
+        const completeFormData: FormData = {
+          ...formData,
+          userId: user?.id ?? '',
+          userEmail: user?.emailAddresses[0]?.emailAddress ?? ''
+        }
+
+
+
         const response = await fetch('/api/eulogy', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(completeFormData),
         });
+        console.log('');
+        console.log('');
+        console.log('');
+
+        console.log('completeFormData:', completeFormData);
+        console.log('');
+        console.log('');
+        console.log('');
 
         if (response.ok) {
           console.log('Form data stored successfully!');
           // Clear the form or redirect the user
+          router.push('/tools/eulogygenerator/dashboard?new=true')
         } else {
           const errorData = await response.json();
           console.error('Error storing form data:', errorData.error);

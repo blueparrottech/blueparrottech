@@ -1,34 +1,14 @@
 // pages/api/eulogy.ts
 import { NextResponse } from 'next/server';
 import { neon } from '@neondatabase/serverless';
-
+import { FormData } from './types'
 export const config = {
   runtime: 'edge',
 };
 
 
 
-type FormData = {
-  fullName: string
-  relationship: string
-  dateOfBirth: string
-  dateOfPassing: string
-  placeOfBirth: string
-  familyMembers: string
-  profession: string
-  careerAchievements: string
-  hobbies: string
-  joyfulActivities: string
-  definingQualities: string
-  personalStory: string
-  communityImpact: string
-  charities: string
-  favoriteSayings: string
-  lifeValues: string
-  rememberedFor: string
-  additionalInfo: string
-}
-
+ 
 
 
 
@@ -40,7 +20,32 @@ export async function POST(request: Request): Promise<NextResponse> {
     const sql = neon(`${process.env.DATABASE_URL}`);
 
     // Insert the form data into the Postgres database
-    await sql('INSERT INTO eulogy_form (full_name, relationship, date_of_birth, date_of_passing, place_of_birth, family_members, profession, career_achievements, hobbies, joyful_activities, defining_qualities, personal_story, community_impact, charities, favorite_sayings, life_values, remembered_for, additional_info) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)', [
+    await sql(`
+      INSERT INTO eulogies (
+        user_id, 
+        user_email,
+        full_name, 
+        relationship, 
+        date_of_birth, 
+        date_of_passing, 
+        place_of_birth, 
+        family_members, 
+        profession, 
+        career_achievements, 
+        hobbies, 
+        joyful_activities, 
+        defining_qualities, 
+        personal_story, 
+        community_impact, 
+        charities, 
+        favorite_sayings, 
+        life_values, 
+        remembered_for, 
+        additional_info
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+    `, [
+      formData.userId,
+      formData.userEmail,
       formData.fullName,
       formData.relationship,
       formData.dateOfBirth,
@@ -59,7 +64,7 @@ export async function POST(request: Request): Promise<NextResponse> {
       formData.lifeValues,
       formData.rememberedFor,
       formData.additionalInfo,
-    ]);
+    ])
 
     return NextResponse.json({ message: 'Form data stored successfully' }, { status: 200 });
   } catch (error) {
