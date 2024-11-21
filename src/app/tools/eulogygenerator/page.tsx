@@ -123,7 +123,7 @@ export default function EulogyForm() {
 
   const handleSubmit = async (e?: React.FormEvent) => {
 
-    e.preventDefault();
+    e?.preventDefault();
 
     if (isSubmitting || isSubmitted) {
     console.log('-------NOT isSubmitting || isSubmitted:');
