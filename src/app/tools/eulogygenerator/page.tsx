@@ -37,13 +37,15 @@ export default function EulogyForm() {
 
   const router = useRouter()
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submissionError, setSubmissionError] = useState<string | null>(null)
 
+  // get user id from clerk
   const { user } = useUser();
-console.log('useruseruseruseruser:', user?.emailAddresses[0].emailAddress);
-console.log(':');
 
-console.log(':');
-console.log('useruseruseruseruser:',  user?.id);
+
+ 
 
 
   useEffect(() => {
@@ -78,8 +80,22 @@ console.log('useruseruseruseruser:',  user?.id);
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
+
+    if (isSubmitting || isSubmitted) {
+    console.log('-------NOT isSubmitting || isSubmitted:');
+
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmissionError(null)
+    console.log('NOT validateForm:');
+
     if (validateForm()) {
+      console.log('YES validateForm:');
+
       try {
 
 
@@ -98,27 +114,31 @@ console.log('useruseruseruseruser:',  user?.id);
           },
           body: JSON.stringify(completeFormData),
         });
-        console.log('');
-        console.log('');
-        console.log('');
-
-        console.log('completeFormData:', completeFormData);
-        console.log('');
-        console.log('');
-        console.log('');
-
         if (response.ok) {
+
+          setIsSubmitted(true)
+
+          setFormData(initialFormData)
+          localStorage.removeItem('eulogyFormData')
           console.log('Form data stored successfully!');
           // Clear the form or redirect the user
-          router.push('/tools/eulogygenerator/dashboard?new=true')
+
+          setTimeout(() => {
+            router.push('/tools/eulogygenerator/dashboard?new=true');
+        }, 100);
+
+ 
         } else {
           const errorData = await response.json();
           console.error('Error storing form data:', errorData.error);
+          setSubmissionError(errorData.error || 'Failed to submit form')
           // Display an error message to the user
         }
       } catch (error) {
         console.error('Error submitting form:', error);
         // Display an error message to the user
+      }finally {
+        setIsSubmitting(false)
       }
     }
   };
@@ -215,6 +235,7 @@ console.log('useruseruseruseruser:',  user?.id);
                 value={formData.placeOfBirth}
                 onChange={handleInputChange}
                 placeholder="e.g. New York, NY"
+                required 
               />
             </div>
           </div>
@@ -443,19 +464,38 @@ console.log('useruseruseruseruser:',  user?.id);
               </Button>
             ) : (
               <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button type="submit">Submit</Button>
-                </AlertDialogTrigger>
+<AlertDialogTrigger asChild>
+    <Button type="button" disabled={isSubmitting}>
+        {isSubmitting ? 'Submitting...' : 'Submit'}
+    </Button>
+</AlertDialogTrigger>
                 <AlertDialogContent>
+
                   <AlertDialogHeader>
+
                     <AlertDialogTitle>Are you sure you want to submit?</AlertDialogTitle>
+
                     <AlertDialogDescription>
                       This action cannot be undone. Please ensure all information is correct before submitting.
                     </AlertDialogDescription>
+
                   </AlertDialogHeader>
+
                   <AlertDialogFooter>
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleSubmit}>Submit</AlertDialogAction>
+
+
+                    <AlertDialogAction
+                    onClick={() => {
+                      if (!isSubmitting && !isSubmitted) {
+                        handleSubmit(new Event('submit'));
+                      }
+                    }}
+                  >
+                    Submit
+                  </AlertDialogAction>
+
+
                   </AlertDialogFooter>
                 </AlertDialogContent>
               </AlertDialog>
@@ -465,21 +505,30 @@ console.log('useruseruseruseruser:',  user?.id);
           <div className="flex justify-between items-center">
             <TooltipProvider>
               <Tooltip>
+
                 <TooltipTrigger asChild>
+
                   <Button type="button" onClick={handleSaveDraft} variant="outline">
                     Save Draft
                   </Button>
+
                 </TooltipTrigger>
+
+
                 <TooltipContent>
                   <p>Save your progress locally</p>
                 </TooltipContent>
+
+
               </Tooltip>
             </TooltipProvider>
 
             <AlertDialog>
+
               <AlertDialogTrigger asChild>
                 <Button type="button" variant="outline">Clear Form</Button>
               </AlertDialogTrigger>
+              
               <AlertDialogContent>
                 <AlertDialogHeader>
                   <AlertDialogTitle>Are you sure you want to clear the form?</AlertDialogTitle>
