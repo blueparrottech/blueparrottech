@@ -501,6 +501,7 @@ export default function EulogyForm() {
           </div>
 
           <div className="flex justify-between items-center">
+
             <Button
               type="button"
               onClick={() => setCurrentSection(prev => Math.max(0, prev - 1))}
@@ -509,6 +510,8 @@ export default function EulogyForm() {
             >
               Previous
             </Button>
+
+
             {currentSection < sections.length - 1 ? (
               <Button
                 type="button"
@@ -516,7 +519,10 @@ export default function EulogyForm() {
               >
                 Next
               </Button>
+              
             ) : (
+
+
               <AlertDialog>
 <AlertDialogTrigger asChild>
     <Button type="button" disabled={isSubmitting}>

@@ -48,14 +48,16 @@ export default function ToolGrid() {
       />
  </Link>
 
+
+ <Link href="https://www.aiimageandvideogenerators.xyz"> 
 <ToolCard
-        title="Image Resizer"
-        description="Resize your images without losing quality"
-        content="Our image resizer tool helps you quickly adjust the dimensions of your images without compromising on quality. Perfect for social media posts, web graphics, or email attachments, this tool ensures your images look great at any size."
-        buttonText="Resize Image"
+        title="AI Image and Video Generators | AI Directory"
+        description="AI Image and Video Generators | AI Directory"
+        content="Discover Top AI Visual Tools."
+        buttonText="Go to aiimageandvideogenerators.xyz"
         icon={FileUp}
       />
-
+ </Link>
 
 <ToolCard
         title="Image Resizer"
