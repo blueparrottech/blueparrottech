@@ -48,12 +48,32 @@ export default function EulogyForm() {
  
 
 
+
+
+
+
+
+
+
+
+
+
   useEffect(() => {
     const savedData = localStorage.getItem('eulogyFormData')
     if (savedData) {
       setFormData(JSON.parse(savedData))
     }
   }, [])
+
+
+
+
+
+
+
+
+
+
 
   useEffect(() => {
     const autosaveTimer = setTimeout(() => {
@@ -63,11 +83,26 @@ export default function EulogyForm() {
     return () => clearTimeout(autosaveTimer)
   }, [formData])
 
+
+
+
+
+
+
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
     setErrors(prev => ({ ...prev, [name]: '' }))
   }
+
+
+
+
+
+
+
+
 
   const validateForm = () => {
     const newErrors: Partial<FormData> = {}
@@ -79,7 +114,14 @@ export default function EulogyForm() {
     return Object.keys(newErrors).length === 0
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+
+
+
+
+
+
+
+  const handleSubmit = async (e?: React.FormEvent) => {
 
     e.preventDefault();
 
@@ -165,10 +207,22 @@ export default function EulogyForm() {
     localStorage.setItem('eulogyFormDraft', JSON.stringify(formData))
   }
 
+
+
+
+
+
   const handleClearForm = () => {
     setFormData(initialFormData)
     localStorage.removeItem('eulogyFormData')
   }
+
+
+
+
+
+
+
 
   const renderSection = () => {
     switch (currentSection) {
@@ -488,7 +542,7 @@ export default function EulogyForm() {
                     <AlertDialogAction
                     onClick={() => {
                       if (!isSubmitting && !isSubmitted) {
-                        handleSubmit(new Event('submit'));
+                        handleSubmit();
                       }
                     }}
                   >
