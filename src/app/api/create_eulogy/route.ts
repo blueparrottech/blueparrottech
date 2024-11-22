@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import { FormData } from '../../tools/eulogygenerator/types';
 import OpenAI from "openai";
+import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 
 export const config = {
   runtime: 'edge',
@@ -20,7 +21,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     console.log(' enter try api call');
 
     // Construct a message for the OpenAI API based on form data
-    const messages = [
+    const messages: ChatCompletionMessageParam[] = [
       { role: "system", content: "You are Mark, an expert Eulogies write, very empathic and with expert and deep emotional writing capabilities." },
       { role: "user", content: `Generate an eulogy using the following details, which are questions made to the Eulogy requester: ${JSON.stringify(formData)}` },
     ];
