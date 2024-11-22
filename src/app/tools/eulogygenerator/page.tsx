@@ -149,27 +149,63 @@ export default function EulogyForm() {
 
 
 
-        const response = await fetch('/api/eulogy', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(completeFormData),
-        });
+        //  const response = await fetch('/api/eulogy', {
+        //  method: 'POST',
+       //   headers: {
+      //    'Content-Type': 'application/json',
+      //    },
+       //   body: JSON.stringify(completeFormData),
+      //    });
+
+
+
+
+      const response = await fetch("/api/create_eulogy", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(completeFormData),
+      });
+
+
+
+
+
         if (response.ok) {
 
-          setIsSubmitted(true)
+          const { eulogy } = await response.json();
 
+
+          setIsSubmitted(true)
           setFormData(initialFormData)
-          localStorage.removeItem('eulogyFormData')
+
+          //localStorage.removeItem('eulogyFormData')
+          console.log('eulogy-------------!' , eulogy);
+          console.log('');
+
           console.log('Form data stored successfully!');
+          localStorage.setItem("eulogy", eulogy); // Store the eulogy in localStorage
+         
+
+          router.push('/tools/eulogygenerator/result');
+
+
+         // router.push({
+         //   pathname: "/result",
+          //  query: { eulogy: encodeURIComponent(eulogy) }, // Pass the eulogy as a query param
+          //});
+
+
           // Clear the form or redirect the user
 
-          setTimeout(() => {
-            router.push('/tools/eulogygenerator/dashboard?new=true');
-        }, 100);
+          //   setTimeout(() => {
+      //       router.push('/tools/eulogygenerator/dashboard?new=true');
+       //       }, 100);
 
  
+
+
+
+
         } else {
           const errorData = await response.json();
           console.error('Error storing form data:', errorData.error);
