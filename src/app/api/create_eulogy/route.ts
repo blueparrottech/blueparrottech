@@ -33,7 +33,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     });
 
     // Extract the response message
-    const responseMessage = completion.choices[0]?.message?.content || "No response generated";
+    const responseMessage = completion.choices[0]?.message?.content || "No responsse generated";
 
     // Respond with the generated content
     return NextResponse.json({ eulogy: responseMessage }, { status: 200 });
