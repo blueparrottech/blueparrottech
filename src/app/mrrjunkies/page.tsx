@@ -9,6 +9,11 @@ import Image from "next/image";
 export default function ToolGrid() {
   return (
     <div className="container mx-auto px-4 py-8">
+
+<Link href="/"> Return Homepage     
+</Link>
+
+
       <h1 className="text-3xl font-bold mb-4 text-center">MRR Junkies</h1>
       <h2 className="text-2xl font-semibold mb-6 text-center">Obsessed with Monthly Recurring Revenue?</h2>
       <p className="text-sm text-gray-600 mb-8 text-center">
@@ -21,7 +26,7 @@ export default function ToolGrid() {
       <Link href="https://www.foxsell.app">     
       <div className=" ">
       <Image
-                  src="/mrr/foxsell.jpg"
+                  src="/mrr/foxsell.JPG"
                   width={340}
                   height={340}
                   alt="foxsell"
@@ -45,7 +50,7 @@ export default function ToolGrid() {
   <Link href="http://www.podcastbuffs.com/">     
       <div className=" ">
       <Image
-                  src="/mrr/PodcastBuffs.jpg"
+                  src="/mrr/PodcastBuffs.JPG"
                   width={340}
                   height={340}
                   alt="PodcastBuffs"
