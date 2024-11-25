@@ -17,6 +17,8 @@ import { FormData, initialFormData } from './types'
 
 import { useSearchParams, useRouter } from 'next/navigation'  // Note: from 'next/navigation', not 'next/router'
 
+import { RemainingCreditsCard  } from "../../components"
+
  
 
 const sections = [
@@ -44,7 +46,44 @@ export default function EulogyForm() {
   // get user id from clerk
   const { user } = useUser();
 
+  const [creditsAvailable, setCreditsAvailable] = useState<number>(0)
+  const [isLoadingCredits, setIsLoadingCredits] = useState(true)
+  const [creditError, setCreditError] = useState<string | null>(null)
 
+
+
+
+
+  useEffect(() => {
+    const checkCredits = async () => {
+      if (!user?.id) return;
+      
+      try {
+        setIsLoadingCredits(true)
+        const response = await fetch('/api/check-credits', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+  
+        if (!response.ok) {
+          throw new Error('Failed to fetch credits')
+        }
+  
+        const data = await response.json()
+        setCreditsAvailable(data.remainingCredits)
+        setCreditError(null)
+      } catch (error) {
+        console.error('Error checking credits:', error)
+        setCreditError('Failed to check available credits')
+      } finally {
+        setIsLoadingCredits(false)
+      }
+    }
+  
+    checkCredits()
+  }, [user?.id])
  
 
 
@@ -529,6 +568,20 @@ export default function EulogyForm() {
             Please fill out this form with care and sensitivity. Your responses will help create a meaningful tribute.
           </p>
         </div>
+
+
+
+        <RemainingCreditsCard 
+          credits={creditsAvailable}
+          isLoading={isLoadingCredits}
+          error={creditError}
+          maxCredits={2} // optional, defaults to 2 if not provided
+        />
+
+
+
+
+
         <Progress value={(currentSection + 1) * (100 / sections.length)} className="w-full" />
         <form onSubmit={handleSubmit} className="mt-8 space-y-6">
           <div className="rounded-md shadow-sm -space-y-px">
@@ -548,96 +601,110 @@ export default function EulogyForm() {
             </Button>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
             {currentSection < sections.length - 1 ? (
-              <Button
-                type="button"
-                onClick={() => setCurrentSection(prev => Math.min(sections.length - 1, prev + 1))}
+  <Button
+    type="button"
+    onClick={() => setCurrentSection(prev => Math.min(sections.length - 1, prev + 1))}
+  >
+    Next
+  </Button>
+) : (
+  <AlertDialog>
+    <AlertDialogTrigger asChild>
+      <div className="space-y-2"> {/* Added wrapper div for tooltip */}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button 
+                type="button" 
+                disabled={isSubmitting || creditsAvailable <= 0 || isLoadingCredits}
               >
-                Next
+                {isLoadingCredits 
+                  ? 'Checking credits...' 
+                  : isSubmitting 
+                    ? 'Submitting...' 
+                    : creditsAvailable <= 0 
+                      ? 'No generations remaining today'
+                      : 'Submit'}
               </Button>
-              
-            ) : (
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>
+                {isLoadingCredits 
+                  ? 'Checking available generations...'
+                  : creditsAvailable <= 0 
+                    ? 'You have used all your generations for today. Please try again tomorrow.'
+                    : `You have ${creditsAvailable} generation${creditsAvailable !== 1 ? 's' : ''} remaining today`}
+              </p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        {creditError && (
+          <p className="text-red-500 text-sm">{creditError}</p>
+        )}
+      </div>
+    </AlertDialogTrigger>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle>Are you sure you want to submit?</AlertDialogTitle>
+        <AlertDialogDescription>
+          This action cannot be undone. Please ensure all information is correct before submitting.
+          {creditsAvailable > 0 && (
+            <p className="mt-2 text-sm text-gray-600">
+              You have {creditsAvailable} generation{creditsAvailable !== 1 ? 's' : ''} remaining today.
+            </p>
+          )}
+        </AlertDialogDescription>
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel>Cancel</AlertDialogCancel>
+        <AlertDialogAction
+          onClick={async () => {
+            if (!isSubmitting && !isSubmitted && creditsAvailable > 0) {
+              // Double-check credits before final submission
+              try {
+                const creditCheck = await fetch('/api/check-credits')
+                const { remainingCredits } = await creditCheck.json()
+                
+                if (remainingCredits <= 0) {
+                  setCreditsAvailable(0)
+                  setSubmissionError('No generations remaining today')
+                  return
+                }
+                
+                handleSubmit()
+              } catch (error) {
+                console.error('Error verifying credits:', error)
+                setSubmissionError('Failed to verify available credits')
+              }
+            }
+          }}
+        >
+          Submit
+        </AlertDialogAction>
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialog>
+)}
 
 
-              <AlertDialog>
-<AlertDialogTrigger asChild>
-    <Button type="button" disabled={isSubmitting}>
-        {isSubmitting ? 'Submitting...' : 'Submit'}
-    </Button>
-</AlertDialogTrigger>
-                <AlertDialogContent>
-
-                  <AlertDialogHeader>
-
-                    <AlertDialogTitle>Are you sure you want to submit?</AlertDialogTitle>
-
-                    <AlertDialogDescription>
-                      This action cannot be undone. Please ensure all information is correct before submitting.
-                    </AlertDialogDescription>
-
-                  </AlertDialogHeader>
-
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
 
 
-                    <AlertDialogAction
-                    onClick={() => {
-                      if (!isSubmitting && !isSubmitted) {
-                        handleSubmit();
-                      }
-                    }}
-                  >
-                    Submit
-                  </AlertDialogAction>
 
 
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            )}
-          </div>
 
-          <div className="flex justify-between items-center">
-            <TooltipProvider>
-              <Tooltip>
-
-                <TooltipTrigger asChild>
-
-                  <Button type="button" onClick={handleSaveDraft} variant="outline">
-                    Save Draft
-                  </Button>
-
-                </TooltipTrigger>
-
-
-                <TooltipContent>
-                  <p>Save your progress locally</p>
-                </TooltipContent>
-
-
-              </Tooltip>
-            </TooltipProvider>
-
-            <AlertDialog>
-
-              <AlertDialogTrigger asChild>
-                <Button type="button" variant="outline">Clear Form</Button>
-              </AlertDialogTrigger>
-              
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Are you sure you want to clear the form?</AlertDialogTitle>
-                  <AlertDialogDescription>
-                    This action cannot be undone. All entered information will be lost.
-                  </AlertDialogDescription>
-                </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction onClick={handleClearForm}>Clear</AlertDialogAction>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialog>
           </div>
         </form>
       </div>

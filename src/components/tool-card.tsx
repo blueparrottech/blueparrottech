@@ -16,8 +16,8 @@ export default function ToolCard({ title, description, content, buttonText, icon
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Icon className="h-6 w-6" />
+        <CardTitle className="flex items-center gap-2 mb-2">
+          
           {title}
         </CardTitle>
         <CardDescription>
