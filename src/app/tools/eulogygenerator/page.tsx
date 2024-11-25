@@ -570,13 +570,13 @@ export default function EulogyForm() {
         </div>
 
 
-
-        <RemainingCreditsCard 
-          credits={creditsAvailable}
-          isLoading={isLoadingCredits}
-          error={creditError}
-          maxCredits={2} // optional, defaults to 2 if not provided
-        />
+        // not ready this compon
+        // <RemainingCreditsCard 
+        //  credits={creditsAvailable}
+       //   isLoading={isLoadingCredits}
+        //  error={creditError}
+        //  maxCredits={2} // optional, defaults to 2 if not provided
+       //  />
 
 
 
