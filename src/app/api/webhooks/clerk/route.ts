@@ -8,6 +8,14 @@ import { neon } from '@neondatabase/serverless';
 
 
 
+interface ClerkEmail {
+  id: string;
+  email_address: string;
+  verification_status: string; // Adjust based on actual schema
+}
+
+
+
 
 export async function POST(req: Request) {
     const SIGNING_SECRET = process.env.CLERK_WEBHOOK_SECRET
@@ -72,7 +80,7 @@ export async function POST(req: Request) {
       try {
         // Extract primary email address
         const primaryEmail = payload.data.email_addresses.find(
-            (email) => email.id === payload.data.primary_email_address_id
+            (email: ClerkEmail) => email.id === payload.data.primary_email_address_id
         )?.email_address;
     
         await sql(
