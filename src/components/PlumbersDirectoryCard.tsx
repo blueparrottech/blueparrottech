@@ -1,5 +1,7 @@
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
+ 
+
 
 // Importing Inter font with Latin subset
 const inter = Inter({ subsets: ['latin'] });
@@ -25,14 +27,12 @@ interface PlumbersDirectoryCardProps {
 export default function PlumbersDirectoryCard( { posts }: PlumbersDirectoryCardProps ) {
   return (
     <section className="mt-4 mx-auto px-1 max-w-screen-xl md:px-8">
-      <h1 className={`${inter.className} md:text-6xl text-3xl text-slate-900 mb-2`}>
-        California Plumbers Directory
-      </h1>
+ 
 
-      <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 grid sm:gap-8 gap-4 sm:grid-cols-1 lg:grid-cols-3">
         {posts.map((item, index) => (
           <article
-            className="max-w-md bg-blue-200 mb-3 mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"
+            className="max-w-sm bg-blue-200 mb-3 mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"
             key={index}
           >
             <a href={item.href} target="_blank" rel="noopener noreferrer">
