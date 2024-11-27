@@ -2,51 +2,49 @@
 import { Progress } from "@/components/ui/progress"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 
-interface RemainingCreditsCardProps {
-  credits: number
-  isLoading: boolean
-  error: string | null
-  maxCredits?: number // Optional, defaults to 2
-}
+ 
 
-export function RemainingCreditsCard({ 
-  credits, 
-  isLoading, 
-  error, 
-  maxCredits = 2 
-}: RemainingCreditsCardProps) {
-  return (
-    <Card className="mb-6">
-      <CardHeader className="pb-2">
-        <div className="flex items-center justify-between">
-          <h3 className="text-sm font-medium text-gray-700">Daily Generations</h3>
-          {!isLoading && !error && (
-            <span className="text-sm text-gray-500">
-              {credits} of {maxCredits}
-            </span>
-          )}
+ 
+
+
+  export default function RemainingCreditsCard({
+    credits,
+    isLoading,
+    error,
+    maxCredits = 2, // Default max credits
+  }: {
+    credits: number;
+    isLoading: boolean;
+    error: string | null;
+    maxCredits?: number;
+  }) {
+    if (isLoading) {
+      return (
+        <div className="p-4 border rounded bg-blue-50 text-blue-600">
+          Checking remaining credits...
         </div>
-      </CardHeader>
-      <CardContent>
-        {isLoading ? (
-          <p className="text-gray-500 text-sm">Checking available generations...</p>
-        ) : error ? (
-          <p className="text-red-500 text-sm">{error}</p>
-        ) : (
-          <div className="space-y-2">
-            <Progress 
-              value={(credits / maxCredits) * 100} 
-              className="h-2"
-            />
-            <p className="text-sm text-gray-600">
-              {credits === 0 
-                ? "No generations remaining today. Try again tomorrow!" 
-                : `You have ${credits} generation${credits !== 1 ? 's' : ''} remaining today`
-              }
-            </p>
+      )
+    }
+  
+    if (error) {
+      return (
+        <div className="p-4 border rounded bg-red-50 text-red-600">
+          {error}
+        </div>
+      )
+    }
+  
+    return (
+      <div className={`p-4 border rounded ${credits > 0 ? 'bg-green-50 text-green-600' : 'bg-yellow-50 text-yellow-600'}`}>
+        {credits > 0
+          ? `You have ${credits} generation${credits !== 1 ? 's' : ''} remaining today.`
+          : 'You have no remaining credits for today. Please try again tomorrow.'}
+        {maxCredits && (
+          <div className="text-sm text-gray-600">
+            Maximum allowed credits per day: {maxCredits}
           </div>
         )}
-      </CardContent>
-    </Card>
-  )
-}
+      </div>
+    )
+  }
+  

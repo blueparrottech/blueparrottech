@@ -17,7 +17,7 @@ import { FormData, initialFormData } from './types'
 
 import { useSearchParams, useRouter } from 'next/navigation'  // Note: from 'next/navigation', not 'next/router'
 
-// import { RemainingCreditsCard  } from "../../components"
+ import  RemainingCreditsCard   from "../../../components/RemainingCreditsCard"
 
  
 
@@ -57,33 +57,36 @@ export default function EulogyForm() {
   useEffect(() => {
     const checkCredits = async () => {
       if (!user?.id) return;
-      
+  
       try {
-        setIsLoadingCredits(true)
-        const response = await fetch('/api/check-credits', {
+        setIsLoadingCredits(true);
+  
+        const response = await fetch('/api/get-user-credits', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-          }
-        })
+            'X-User-ID': user.id, // Send user ID in the headers
+          },
+        });
   
         if (!response.ok) {
-          throw new Error('Failed to fetch credits')
+          throw new Error('Failed to fetch credits');
         }
   
-        const data = await response.json()
-        setCreditsAvailable(data.remainingCredits)
-        setCreditError(null)
+        const data = await response.json();
+        setCreditsAvailable(data.remainingCredits);
+        setCreditError(null);
       } catch (error) {
-        console.error('Error checking credits:', error)
-        setCreditError('Failed to check available credits')
+        console.error('Error checking credits:', error);
+        setCreditError('Failed to check available credits');
       } finally {
-        setIsLoadingCredits(false)
+        setIsLoadingCredits(false);
       }
-    }
+    };
   
-    checkCredits()
-  }, [user?.id])
+    checkCredits();
+  }, [user?.id]);
+  
  
 
 
@@ -160,22 +163,44 @@ export default function EulogyForm() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const handleSubmit = async (e?: React.FormEvent) => {
 
     e?.preventDefault();
 
-    if (isSubmitting || isSubmitted) {
-    console.log('-------NOT isSubmitting || isSubmitted:');
 
+    if (creditsAvailable <= 0) {
+      setSubmissionError("You don't have enough credits to perform this action.");
+      return;
+  }
+
+
+    if (isSubmitting || isSubmitted) {
       return
     }
 
     setIsSubmitting(true)
     setSubmissionError(null)
-    console.log('NOT validateForm:');
+ 
 
     if (validateForm()) {
-      console.log('YES validateForm:');
+ 
 
       try {
 
@@ -266,6 +291,19 @@ export default function EulogyForm() {
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -559,6 +597,19 @@ export default function EulogyForm() {
     }
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl w-full space-y-8 bg-white p-10 rounded-xl shadow-md">
@@ -570,13 +621,28 @@ export default function EulogyForm() {
         </div>
 
 
-       {/*   not ready this compon    */}
-       {/*   <RemainingCreditsCard    */}
-       {/*  credits={creditsAvailable}    */}
-      {/*   isLoading={isLoadingCredits}     */}
-        {/*   error={creditError}     */}
-        {/*   maxCredits={2} // optional, defaults to 2 if not provided  */}
-      {/*     />              */}
+
+
+
+
+
+
+
+  
+        <RemainingCreditsCard   
+         credits={creditsAvailable}   
+      isLoading={isLoadingCredits}    
+         error={creditError}   
+          maxCredits={2} // optional, defaults to 2 if not provided 
+         />             
+
+
+
+
+
+
+
+
 
 
 
