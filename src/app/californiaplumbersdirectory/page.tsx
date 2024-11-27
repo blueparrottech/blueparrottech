@@ -7,10 +7,37 @@ import PlumbersDirectoryCard from "../../components/PlumbersDirectoryCard";
 
 
 
+const posts = [
+  {
+    title: "24/7 Rooter & Plumbing",
+    desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
+    img: "/thumb_jardin.jpg",
+    href: "https://www.24-7rooter.com/",
+  },
+  {
+    title: "Flow Masters Plumbing ",
+    desc: "San Francisco’s Top-Rated Plumbing Company",
+    img: "/thumb_abuelo.jpg",
+    href: "https://flowmastersplumbing.com/",
+    },
+
+    {
+        title: "Smelly Mel’s Plumbing Inc  ",
+        desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. We value our customers, which means we respond as quickly as possible to your plumbing and rooter needs.",
+        img: "/thumb_abuelo.jpg",
+        href: "https://www.smellymelsplumbing.com/",
+        },
+
+
+];
+
+
+
+
 
 
 export default function PlumbersDirectory() {
-  const posts = [1];
+   
 
   return (
     <div className="container mx-auto px-4 py-8">

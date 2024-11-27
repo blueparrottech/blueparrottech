@@ -11,31 +11,18 @@ interface Post {
   href: string;
 }
 
-const posts: Post[] = [
-  {
-    title: "24/7 Rooter & Plumbing",
-    desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
-    img: "/thumb_jardin.jpg",
-    href: "https://www.24-7rooter.com/",
-  },
-  {
-    title: "Flow Masters Plumbing ",
-    desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/thumb_abuelo.jpg",
-    href: "https://flowmastersplumbing.com/",
-    },
-
-    {
-        title: "Smelly Mel’s Plumbing Inc  ",
-        desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. We value our customers, which means we respond as quickly as possible to your plumbing and rooter needs.",
-        img: "/thumb_abuelo.jpg",
-        href: "https://www.smellymelsplumbing.com/",
-        },
 
 
-];
+// Update the component to accept `posts` as a prop
+interface PlumbersDirectoryCardProps {
+    posts: Post[];
+  }
 
-export default function PlumbersDirectoryCard() {
+
+
+
+
+export default function PlumbersDirectoryCard( { posts }: PlumbersDirectoryCardProps ) {
   return (
     <section className="mt-4 mx-auto px-1 max-w-screen-xl md:px-8">
       <h1 className={`${inter.className} md:text-6xl text-3xl text-slate-900 mb-2`}>
