@@ -347,6 +347,7 @@ export default function EulogyForm() {
               <Input
                 id="fullName"
                 name="fullName"
+                 
                 value={formData.fullName}
                 onChange={handleInputChange}
                 placeholder="e.g. John Doe"

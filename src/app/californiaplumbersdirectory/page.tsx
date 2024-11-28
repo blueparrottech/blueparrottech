@@ -43,7 +43,13 @@ export default function PlumbersDirectory() {
       
 
         <title>California Plumbers Directory</title>
-    
+        <Head>
+        <link
+          rel="canonical"
+          href="https://www.limeparrottech.site/californiaplumbersdirectory"
+          key="canonical"
+        />
+      </Head>
 
       <h1 className="text-3xl font-bold mb-4 text-center">California Plumbers Directory</h1>
       <h2 className="text-2xl font-semibold mb-6 text-center">Find Trusted Plumbers in Your Area Today</h2>
