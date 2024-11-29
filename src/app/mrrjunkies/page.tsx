@@ -10,7 +10,7 @@ export default function ToolGrid() {
   return (
     <div className="container mx-auto px-4 py-8">
 
-<Link href="/"> Return Homepage     
+<Link  className="bg-lime-300 p-4 rounded-xl shadow-lg" href="https://www.limeparrottech.site/"> Return to Homepage     
 </Link>
 
 

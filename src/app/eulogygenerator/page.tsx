@@ -6,6 +6,11 @@ import Link from 'next/link';
 export default function ToolGrid() {
   return (
     <div className="container mx-auto px-4 py-8">
+
+<Link  className="bg-lime-300 p-4 rounded-xl shadow-lg" href="https://www.limeparrottech.site/"> Return to Homepage     
+</Link>
+
+
       <h1 className="text-3xl font-bold mb-4 text-center">Eulogy Generator Tool</h1>
       <h2 className="text-2xl font-semibold mb-6 text-center">Create Heartfelt Eulogies Effortlessly</h2>
       <p className="text-sm text-gray-600 mb-8 text-center">
