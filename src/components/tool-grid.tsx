@@ -19,7 +19,7 @@ export default function ToolGrid() {
       <ToolCard
         title="Eulogy Generator"
         description="Eulogy writing system"
-        content="Our image resizer tool helps you quickly adjust the dimensions of your images without compromising on quality. Perfect for social media posts, web graphics, or email attachments, this tool ensures your images look great at any size."
+        content="Eulogy writing system."
         buttonText="Write an Eulogy"
         icon={FileUp}
       />
@@ -73,10 +73,10 @@ export default function ToolGrid() {
  <Link href="./tools/pdf">
 
 <ToolCard
-  title="PDF Converter"
-  description="Convert yoour documents to PDF format with ease"
-  content="Our PDF converter tool allows you to quickly and easily convert various file formats to PDF. Whether you have Word documents, Excel spreadsheets, or PowerPoint presentations, our tool ensures high-quality conversions while maintaining the original formatting."
-  buttonText="Convert to PDF"
+  title="HireShopifiedTalent"
+  description="Find Shopify Talent"
+  content="Connect with skilled Shopify developers, designers, and marketers to grow your e-commerce business."
+  buttonText="Find Talent"
   icon={FileText}
 />
 </Link>
