@@ -33,7 +33,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "LimeParrot Tech.Site",
-  description: "A place with cool tools",
+  description: "Interesting tools and content for entrepeneurs and businesses",
 };
 
 

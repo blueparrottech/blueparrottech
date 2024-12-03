@@ -10,6 +10,15 @@ export default function ToolGrid() {
   return (
     <div className="container mx-auto px-4 py-8">
 
+
+<title>MRR Junkies - LimeParrot Tech.Site  </title>
+<meta
+  name="description"
+  content="Discover the Monthly Recurring Revenue of famous entrepreneurs."
+/>
+
+
+
 <Link  className="bg-lime-300 p-4 rounded-xl shadow-lg" href="https://www.limeparrottech.site/"> Return to Homepage     
 </Link>
 

@@ -12,7 +12,11 @@ export default function ToolGrid() {
 
 
 
-
+<title>LimeParrot Tech.Site - Tools and Content</title>
+<meta
+  name="description"
+  content="Interesting tools and content for entrepeneurs and businesses."
+/>
 
 
 <Link href="./tools/eulogygenerator">

@@ -11,6 +11,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-red-50 text-gray-900 font-mono">
  
+ <title>LimeParrot Tech.Site - Tools and Content</title>
 
       {/* Text Section */}
       <section className="max-w-3xl mx-auto px-4 py-12 md:py-4 space-y-4">
