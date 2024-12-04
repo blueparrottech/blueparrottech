@@ -1,32 +1,46 @@
 import { PostCard } from '@/components/post-card'
+import Link from "next/link"
 
 // Mock data for blog posts
 const posts = [
   {
-    title: "Getting Started with Next.js",
-    excerpt: "Learn how to build modern web applications with Next.js, a powerful React framework.",
-    date: "2023-05-15",
-    slug: "getting-started-with-nextjs"
+    title: "Eulogy Generator by LimeParrot Tech",
+    excerpt: "Celebrating Lives, Crafting Legacies: Introducing Eulogy Generator.", 
+    slug: "eulogy-generator"
   },
+ 
+
   {
-    title: "Mastering Tailwind CSS",
-    excerpt: "Discover the power of utility-first CSS with Tailwind and streamline your styling workflow.",
-    date: "2023-05-10",
-    slug: "mastering-tailwind-css"
+    title: "MRR Junkies by LimeParrot Tech",
+    excerpt: "Discover the Monthly Recurring Revenue of famous entrepreneurs!", 
+    slug: "mrr-junkies"
   },
+
+
   {
-    title: "The Future of Web Development",
-    excerpt: "Explore emerging trends and technologies that are shaping the future of web development.",
-    date: "2023-05-05",
-    slug: "future-of-web-development"
+    title: "Hire Shopified Talent ",
+    excerpt: "Connect with skilled Shopify developers, designers, and marketers to grow your e-commerce business.", 
+    slug: "hire-shopified-talent"
   },
+
+
+  {
+    title: "California Plumbers Directory",
+    excerpt: "Our directory connects you with experienced plumbers who deliver top-notch service when you need it most.", 
+    slug: "california-plumbers-directory"
+  },
+
+
+
   // Add more mock posts as needed
 ]
 
 export default function BlogPage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Our Blog</h1>
+            <Link  className="bg-lime-300 p-4 rounded-xl shadow-lg" href="https://www.limeparrottech.site/"> Return to Homepage     
+            </Link>
+      <h1 className="text-4xl font-bold my-8">LimeParrot Tech Blog</h1>
       <div className="space-y-8">
         {posts.map((post) => (
           <PostCard key={post.slug} {...post} />

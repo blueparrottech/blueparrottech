@@ -3,11 +3,11 @@ import Link from 'next/link'
 interface PostCardProps {
   title: string
   excerpt: string
-  date: string
+ 
   slug: string
 }
 
-export function PostCard({ title, date, slug }: PostCardProps) {
+export function PostCard({ title,  slug }: PostCardProps) {
   return (
     <div className="border-b border-gray-200 py-8">
       <h2 className="text-2xl font-bold mb-2">
@@ -15,7 +15,7 @@ export function PostCard({ title, date, slug }: PostCardProps) {
           {title}
         </Link>
       </h2>
-      <p className="text-sm text-gray-500">{date}</p>
+ 
     </div>
   )
 }
