@@ -10,11 +10,12 @@ interface ToolCardProps {
   content: string
   buttonText: string
   icon: LucideIcon
+  bgColor?: string;
 }
 
-export default function ToolCard({ title, description, content, buttonText, icon: Icon }: ToolCardProps) {
+export default function ToolCard({ title, description, content, buttonText, icon: Icon , bgColor}: ToolCardProps) {
   return (
-    <Card>
+    <Card   bgColor={bgColor}  >
       <CardHeader>
         <CardTitle className="flex items-center gap-2 mb-2">
           

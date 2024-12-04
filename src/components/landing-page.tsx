@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-red-50 text-gray-900 font-mono">
+    <div className="min-h-screen bg-[#ecfccb] text-gray-900 font-mono">
  
  <title>LimeParrot Tech.Site - Tools and Content</title>
 

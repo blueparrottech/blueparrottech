@@ -19,10 +19,11 @@ export default function ToolGrid() {
 />
 
 
-<Link href="./tools/eulogygenerator">
+<Link  href="./tools/eulogygenerator">
       <ToolCard
+      bgColor='bg-lime-300'
         title="Eulogy Generator"
-        description="Eulogy writing system"
+        description="Discover how our Eulogy Generator can assist you in crafting thoughtful and personalized eulogies."
         content="Eulogy writing system."
         buttonText="Write an Eulogy"
         icon={FileUp}
@@ -36,8 +37,9 @@ export default function ToolGrid() {
 
  <Link href="./mrrjunkies"> 
  <ToolCard
+ bgColor='bg-red-300'
         title="MRR Junkies"
-        description="Get inspired by real-world examples "
+        description="Discover the Monthly Recurring Revenue of famous entrepreneurs. "
         content="Discover the Monthly Recurring Revenue of famous entrepreneurs! Get inspired by real-world examples and learn what drives their success."
         buttonText="Check out MRRs"
         icon={FileUp}
@@ -47,6 +49,7 @@ export default function ToolGrid() {
 
  <Link href="https://www.aiimageandvideogenerators.xyz"> 
 <ToolCard
+bgColor='bg-blue-300'
         title="AI Image and Video Generators "
         description="Discover Top AI Visual Tools."
         content="Discover Top AI Visual Tools."
@@ -59,6 +62,7 @@ export default function ToolGrid() {
 
  <Link href="https://www.amazon.com/dp/B0D15C98H4"> 
 <ToolCard
+bgColor='bg-red-300'
         title="Beat Inflation with an Urban Garden, A book"
         description="This book will guide you through the processes of setting up and maintaining an urban garden in order to produce your own cheaper food."
         content="Discover Top AI Visual Tools."
@@ -74,11 +78,12 @@ export default function ToolGrid() {
 
 
 
- <Link href="./tools/pdf">
+ <Link href="./hireshopifiedtalent">
 
 <ToolCard
-  title="HireShopifiedTalent"
-  description="Find Shopify Talent"
+bgColor='bg-violet-300'
+  title="Hire Shopified Talent"
+  description="Connect with skilled Shopify developers, designers, and marketers to grow your e-commerce business."
   content="Connect with skilled Shopify developers, designers, and marketers to grow your e-commerce business."
   buttonText="Find Talent"
   icon={FileText}
@@ -88,7 +93,17 @@ export default function ToolGrid() {
 
 
 
+<Link href="./californiaplumbersdirectory">
 
+<ToolCard
+bgColor='bg-slate-300'
+  title="California Plumbers Directory"
+  description="Our directory connects you with experienced plumbers who deliver top-notch service when you need it most."
+  content="Our directory connects you with experienced plumbers who deliver top-notch service when you need it most.."
+  buttonText="Find California Plumbers"
+  icon={FileText}
+/>
+</Link>
 
 
 

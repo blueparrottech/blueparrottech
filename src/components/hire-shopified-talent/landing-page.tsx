@@ -71,7 +71,7 @@ export default function LandingPageComponent() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <ShoppingBag className="h-6 w-6" />
-            <span className="text-xl font-bold ">HireShopifiedTalent</span>
+            <span className="text-xl font-bold ">Hire Shopified Talent</span>
           </div>
           <nav>
             <ul className="flex space-x-4">
@@ -86,9 +86,22 @@ export default function LandingPageComponent() {
             </Link></li>
 
             
-            <li><Link href="mailto:hireshopifiedtalent@gmail.com" className="hover:underline font-mono" prefetch={false}>
+            <li><Link href="mailto:blueparrottech@gmail.com" className="hover:underline font-mono" prefetch={false}>
             Contact
             </Link></li>
+
+
+
+ 
+
+
+
+            <li>
+              <Link href="https://tally.so/r/wkRJRo" className="hover:underline font-mono" prefetch={false}>
+              Join as Talent
+            </Link>
+            </li>
+
 
             </ul>
           </nav>
