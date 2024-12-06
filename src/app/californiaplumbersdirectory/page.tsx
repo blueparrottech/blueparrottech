@@ -10,20 +10,20 @@ const posts = [
   {
     title: "24/7 Rooter & Plumbing",
     desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
-    img: "/thumb_jardin.jpg",
+    img: "/asd.jpg",
     href: "https://www.24-7rooter.com/",
   },
   {
     title: "Flow Masters Plumbing ",
     desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/thumb_abuelo.jpg",
+    img: "/asd.jpg",
     href: "https://flowmastersplumbing.com/",
     },
 
     {
         title: "Smelly Mel’s Plumbing Inc  ",
         desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. We value our customers, which means we respond as quickly as possible to your plumbing and rooter needs.",
-        img: "/thumb_abuelo.jpg",
+        img: "/asd.jpg",
         href: "https://www.smellymelsplumbing.com/",
         },
 
