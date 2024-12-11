@@ -10,7 +10,7 @@ export async function GET(req: Request) {
     return new Response('Error: Missing user ID in request headers', {
       status: 400,
     });
-  }
+  } 
 
   try {
     const sql = neon(`${process.env.DATABASE_URL}`);

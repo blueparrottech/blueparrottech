@@ -16,45 +16,14 @@ const posts = [
   {
     title: "Flow Masters Plumbing ",
     desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/asd.jpg",
-    href: "https://flowmastersplumbing.com/",
-    },
-
-    {
-        title: "Smelly Mel’s Plumbing Inc  ",
-        desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. ",
-        img: "/asd.jpg",
-        href: "https://www.smellymelsplumbing.com/",
-        },
-
-
-];
-
-
-
-
-
-
-
-
-const posts_la_county = [
-  {
-    title: "24/7 Rooter & Plumbing",
-    desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
     img: "/plumbersdir/sf_1.jpg",
-    href: "https://www.24-7rooter.com/",
-  },
-  {
-    title: "Flow Masters Plumbing ",
-    desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/asd.jpg",
     href: "https://flowmastersplumbing.com/",
     },
 
     {
         title: "Smelly Mel’s Plumbing Inc  ",
         desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. ",
-        img: "/asd.jpg",
+        img: "/plumbersdir/sf_1.jpg",
         href: "https://www.smellymelsplumbing.com/",
         },
 
@@ -63,6 +32,12 @@ const posts_la_county = [
 
 
 
+
+
+
+
+
+ 
 
 
 
@@ -110,9 +85,9 @@ export default function PlumbersDirectory() {
 
 
 
-      <Link  className=" " href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">       
+
+
       <h2 className="text-2xl font-semibold mb-6 text-gray-100 ">San Francisco, Bay Area</h2>
-      </Link>
       <div className="  sm:grid-cols-1 md:grid-cols-1 gap-6">
       <PlumbersDirectoryCard posts={posts} />
       </div>
@@ -120,12 +95,7 @@ export default function PlumbersDirectory() {
 
 
 
-      <h2 className="text-2xl font-semibold mt-24  text-gray-100 ">LA County</h2>
-      <div className="  sm:grid-cols-1 md:grid-cols-1 gap-6">
-      <PlumbersDirectoryCard posts={posts_la_county} />
-      </div>
-
-
+ 
 
 
 

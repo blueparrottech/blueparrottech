@@ -6,56 +6,25 @@ import Head from 'next/head';
 import PlumbersDirectoryCard from "../../components/PlumbersDirectoryCard";
  
 
-const posts = [
-  {
-    title: "24/7 Rooter & Plumbing",
-    desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
-    img: "/plumbersdir/sf_1.jpg",
-    href: "https://www.24-7rooter.com/",
-  },
-  {
-    title: "Flow Masters Plumbing ",
-    desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/asd.jpg",
-    href: "https://flowmastersplumbing.com/",
-    },
-
-    {
-        title: "Smelly Mel’s Plumbing Inc  ",
-        desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. ",
-        img: "/asd.jpg",
-        href: "https://www.smellymelsplumbing.com/",
-        },
-
-
-];
-
-
-
-
-
-
-
-
 const posts_la_county = [
   {
-    title: "24/7 Rooter & Plumbing",
-    desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
+    title: "Dutton Plumbing",
+    desc: "From repairs and new installations to replacements and routine maintenance. We have expert plumbers on staff.",
     img: "/plumbersdir/sf_1.jpg",
-    href: "https://www.24-7rooter.com/",
+    href: "https://www.duttonplumbing.com/",
   },
   {
-    title: "Flow Masters Plumbing ",
-    desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/asd.jpg",
-    href: "https://flowmastersplumbing.com/",
+    title: "Twin Home Experts ",
+    desc: "Mold Repair , Water Leak Detection Services, Rodent Control and Plumbing Services.",
+    img: "/plumbersdir/sf_2.jpg",
+    href: "https://www.twinplumbing.com/",
     },
 
     {
-        title: "Smelly Mel’s Plumbing Inc  ",
-        desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. ",
-        img: "/asd.jpg",
-        href: "https://www.smellymelsplumbing.com/",
+        title: "HS Rooter Plumbing  ",
+        desc: "Drain, Septic andGas Line Services. ",
+        img: "/plumbersdir/sf_2.jpg",
+        href: "https://hsrooterplumbing.com/",
         },
 
 
@@ -65,6 +34,8 @@ const posts_la_county = [
 
 
 
+
+ 
 
 
 
@@ -110,14 +81,7 @@ export default function PlumbersDirectory() {
 
 
 
-      <Link  className=" " href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">       
-      <h2 className="text-2xl font-semibold mb-6 text-gray-100 ">San Francisco, Bay Area</h2>
-      </Link>
-      <div className="  sm:grid-cols-1 md:grid-cols-1 gap-6">
-      <PlumbersDirectoryCard posts={posts} />
-      </div>
-      
-
+ 
 
 
       <h2 className="text-2xl font-semibold mt-24  text-gray-100 ">LA County</h2>

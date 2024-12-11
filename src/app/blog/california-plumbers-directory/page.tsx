@@ -6,12 +6,17 @@ import Link from "next/link"
 
 export default function EulogyGeneratorBlogPost() {
   return (
+
+    
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-rose-100 text-gray-800 font-serif  rounded-lg shadow-xl ">
+
+
+
       <header className="bg-gray-700 shadow-md ">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-3xl font-bold text-gray-200">California Plumbers Directory by LimeParrot Tech</h1>
           <Link href="/" className="border-l-4 pl-4 border-blue-500 hover:underline font-mono text-gray-200 " prefetch={false}>
-              Go to Homepage
+              Go to LimeParrot Homepage
             </Link>
         </div>
       </header>
