@@ -3,7 +3,7 @@ import ToolCard from '@/components/tool-card'
 import { FileText, FileUp } from 'lucide-react'
 import Link from 'next/link';
 import Head from 'next/head';
-import PlumbersDirectoryCard from "../../components/PlumbersDirectoryCard";
+import PlumbersDirectoryCard from "../../../components/PlumbersDirectoryCard";
  
 
 const posts = [
