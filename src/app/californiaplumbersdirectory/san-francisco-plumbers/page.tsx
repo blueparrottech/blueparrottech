@@ -69,13 +69,11 @@ export default function PlumbersDirectory() {
         />
       </Head>
 
-      <h1 className="text-3xl font-bold mb-4 text-white text-center">California Plumbers Directory</h1>
+      <h1 className="text-3xl font-bold mb-4 text-white text-center">San Francisco Plumbers Directory</h1>
       <h2 className="text-2xl font-semibold mb-6 text-white text-center">Find Trusted Plumbers in Your Area Today</h2>
       <div className="  justify-center flex flex-wrap">
       
-      <p className="   text-lg w-7/12 text-gray-100 mb-8 text-center">
-      Don’t let plumbing problems disrupt your day! Our directory connects you with experienced plumbers who deliver top-notch service when you need it most. From emergency repairs to planned upgrades, find dependable experts who are just a click away.
-      </p>
+ 
       </div>
 
 
