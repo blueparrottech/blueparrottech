@@ -159,9 +159,10 @@ export default function PlumbersDirectory() {
       San Francisco, Bay Area
     </h2>
     <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
-      <button className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-        Check all plumbers in San Francisco
-      </button>
+    <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+      <span className="relative z-10">Check all plumbers in Bay Area</span>
+      <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
+    </button>
     </Link>
   </div>
 
@@ -171,6 +172,8 @@ export default function PlumbersDirectory() {
 </div>
 
       
+
+
 
 
 

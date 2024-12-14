@@ -55,7 +55,20 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+
+		  keyframes: {
+			borderTrail: {
+			  '0%': { borderColor: '#ff5733' }, // Red
+			  '25%': { borderColor: '#ffc300' }, // Yellow
+			  '50%': { borderColor: '#33ff57' }, // Green
+			  '75%': { borderColor: '#3380ff' }, // Blue
+			  '100%': { borderColor: '#ff5733' }, // Back to Red
+			},
+		  },
+		  animation: {
+			borderTrail: 'borderTrail 2s linear infinite',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],
