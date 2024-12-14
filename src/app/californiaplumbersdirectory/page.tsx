@@ -16,16 +16,60 @@ const posts = [
   {
     title: "Flow Masters Plumbing ",
     desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/asd.jpg",
-    href: "https://flowmastersplumbing.com/",
+    img: "/plumbersdir/sf_bay_area/2.jpg",
+    href: "https://www.flowmastersplumbing.com/",
     },
 
     {
         title: "Smelly Mel’s Plumbing Inc  ",
         desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. ",
-        img: "/asd.jpg",
+        img: "/plumbersdir/sf_bay_area/3.jpg",
         href: "https://www.smellymelsplumbing.com/",
         },
+
+
+        {
+          title: "Plumbing Pure  ",
+          desc: "Residential, commercial, and industrial plumbing. We also offer emergency service. ",
+          img: "/plumbersdir/sf_bay_area/4.jpg",
+          href: "https://plumbingpure.com/",
+          },
+  
+
+
+          {
+            title: "Fast Response Plumbing & Rooter  ",
+            desc: "Full-service residential and commercial plumbing company. ",
+            img: "/plumbersdir/sf_bay_area/5.jpg",
+            href: "https://fastresponseplumbingsf.com/",
+            },
+    
+
+
+            {
+              title: "Works Plumbing Repair & Drain Cleaning",
+              desc: "Fully licensed, bonded and insured technicians. Offering 24/7 emergency repair availability. ",
+              img: "/plumbersdir/sf_bay_area/6.jpg",
+              href: "https://www.worksplumbing.com",
+              },
+
+          
+              
+              {
+                title: "Ace Plumbing & Rooter, Inc.",
+                desc: "Plumbing, water heaters, and sewer lines. Installation, maintenance, and high-pressure cleaning.",
+                img: "/plumbersdir/sf_bay_area/7.jpg",
+                href: "https://www.aceplumbingandrooter.com/",
+                },
+
+
+
+                {
+                  title: "Discount Plumbing San Francisco",
+                  desc: "DRAIN CLEANING. WATER HEATERS. GAS LINE REPAIR. PIPELINING. SUMP PUMP. TOILETS, FAUCETS, & MORE.",
+                  img: "/plumbersdir/sf_bay_area/8.jpg",
+                  href: "https://plumbinginsf.com/",
+                  },
 
 
 ];
@@ -109,13 +153,23 @@ export default function PlumbersDirectory() {
 
 
 
+      <div className="mb-6">
+  <div className="flex items-center justify-between">
+    <h2 className="text-2xl font-semibold text-gray-100">
+      San Francisco, Bay Area
+    </h2>
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+      <button className="ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Check all plumbers in San Francisco
+      </button>
+    </Link>
+  </div>
 
-      <Link  className=" " href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">       
-      <h2 className="text-2xl font-semibold mb-6 text-gray-100 ">San Francisco, Bay Area</h2>
-      </Link>
-      <div className="  sm:grid-cols-1 md:grid-cols-1 gap-6">
-      <PlumbersDirectoryCard posts={posts} />
-      </div>
+  <div >
+    <PlumbersDirectoryCard posts={posts} />
+  </div>
+</div>
+
       
 
 
@@ -130,7 +184,7 @@ export default function PlumbersDirectory() {
 
 
 
-      <p className="text-sm text-gray-600 mt-16 text-center"> ¿Do you want to add your business?  Write email to     califoniaplumbersdirectory@gmail.com  
+      <p className="text-sm text-gray-100 mt-16 text-center"> ¿Do you want to add your business?  Write email to     califoniaplumbersdirectory@gmail.com  
       </p>
     </div>
     

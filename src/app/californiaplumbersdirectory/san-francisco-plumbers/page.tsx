@@ -98,7 +98,7 @@ export default function PlumbersDirectory() {
 
 
 
-      <p className="text-sm text-gray-600 mt-16 text-center"> ¿Do you want to add your business?  Write email to     califoniaplumbersdirectory@gmail.com  
+      <p className="text-sm text-gray-100 mt-16 text-center"> ¿Do you want to add your business?  Write email to     califoniaplumbersdirectory@gmail.com  
       </p>
     </div>
     
