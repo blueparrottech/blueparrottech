@@ -91,9 +91,9 @@ export default function RootLayout({
           </head>
 
 
-          <CSPostHogProvider>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <CSPostHogProvider>
 
           <SignedOut>
             <SignInButton />
@@ -107,9 +107,9 @@ export default function RootLayout({
 
 
 
+        </CSPostHogProvider>
 
       </body>
-      </CSPostHogProvider>
     </html>
     </ClerkProvider>
   );

@@ -1,21 +1,22 @@
 // app/providers.tsx
-'use client';
+'use client'
 
-import posthog from 'posthog-js';
-import { PostHogProvider } from 'posthog-js/react';
+import posthog from 'posthog-js'
+import { PostHogProvider as PHProvider } from 'posthog-js/react'
+import { useEffect } from 'react'
 
-interface CSPostHogProviderProps {
-  children: React.ReactNode;
-}
+export function PostHogProvider({ children }: { children: React.ReactNode }) {
+    useEffect(() => {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+        person_profiles: 'identified_only',
+        capture_pageview: false // Disable automatic pageview capture, as we capture manually
+      })
+  }, [])
 
-// Initialize PostHog only on the client side
-if (typeof window !== 'undefined') {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? '', {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-    person_profiles: 'identified_only', // or 'always' for anonymous user profiles
-  });
-}
-
-export function CSPostHogProvider({ children }: CSPostHogProviderProps) {
-  return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
+  return (
+    <PHProvider client={posthog}>
+      {children}
+    </PHProvider>
+  )
 }
