@@ -2,10 +2,10 @@
 'use client' 
 
 import posthog from 'posthog-js' 
-import { PostHogProvider } from 'posthog-js/react' 
+import { PostHogProvider as BasePostHogProvider } from 'posthog-js/react' 
 import { useEffect } from 'react' 
 
-export function PostHogProvider({ children }: { children: React.ReactNode }) { 
+export function PostHogWrapper({ children }: { children: React.ReactNode }) { 
     useEffect(() => { 
       const postHogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
       const postHogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
@@ -20,8 +20,8 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
   }, []) 
 
   return ( 
-    <PostHogProvider client={posthog}> 
+    <BasePostHogProvider client={posthog}> 
       {children} 
-    </PostHogProvider> 
+    </BasePostHogProvider> 
   ) 
 }
