@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { PostHogWrapper  } from './providers'
+import { PostHogProvider  } from './providers'
 import {
   ClerkProvider,
   SignInButton,
@@ -93,7 +93,7 @@ export default function RootLayout({
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <PostHogWrapper>
+          <PostHogProvider>
 
           <SignedOut>
             <SignInButton />
@@ -107,7 +107,7 @@ export default function RootLayout({
 
 
 
-        </PostHogWrapper>
+        </PostHogProvider>
 
       </body>
     </html>
