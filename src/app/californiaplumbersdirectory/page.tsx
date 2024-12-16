@@ -4,6 +4,7 @@ import { FileText, FileUp } from 'lucide-react'
 import Link from 'next/link';
 import Head from 'next/head';
 import PlumbersDirectoryCard from "../../components/PlumbersDirectoryCard";
+import {data_bay_area,data_la_county} from "./page_data_not_full_list";
  
 
 const posts = [
@@ -167,7 +168,7 @@ export default function PlumbersDirectory() {
   </div>
 
   <div >
-    <PlumbersDirectoryCard posts={posts} />
+    <PlumbersDirectoryCard posts={data_bay_area} />
   </div>
 </div>
 
@@ -179,7 +180,7 @@ export default function PlumbersDirectory() {
 
       <h2 className="text-2xl font-semibold mt-24  text-gray-100 ">LA County</h2>
       <div className="  sm:grid-cols-1 md:grid-cols-1 gap-6">
-      <PlumbersDirectoryCard posts={posts_la_county} />
+      <PlumbersDirectoryCard posts={data_la_county} />
       </div>
 
 

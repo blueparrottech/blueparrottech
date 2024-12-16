@@ -8,7 +8,7 @@ export default function ToolGrid() {
   return (
 
 
-    <div className="grid md:grid-cols-3 gap-6 ">
+    <div className="grid md:grid-cols-3 gap-24 ">
 
 
 
@@ -100,7 +100,7 @@ bgColor='bg-slate-300'
   title="California Plumbers Directory"
   description="Our directory connects you with experienced plumbers who deliver top-notch service when you need it most."
   content="Our directory connects you with experienced plumbers who deliver top-notch service when you need it most.."
-  buttonText="Find California Plumbers"
+  buttonText="Find Plumbers in CA"
   icon={FileText}
 />
 </Link>
