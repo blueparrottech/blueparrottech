@@ -161,7 +161,7 @@ export default function PlumbersDirectory() {
     <h2 id="la-county" className="text-2xl font-semibold text-gray-100">
     LA County
     </h2>
-    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/los-angeles-county-plumbers">
     <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in LA County</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
@@ -185,7 +185,7 @@ export default function PlumbersDirectory() {
     <h2 id="san-diego-county" className="text-2xl font-semibold text-gray-100">
     San Diego County
     </h2>
-    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-diego-county-plumbers">
     <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in San Diego County</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
@@ -210,7 +210,7 @@ export default function PlumbersDirectory() {
     <h2 id="orange-county" className="text-2xl font-semibold text-gray-100">
     Orange County
     </h2>
-    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/orange-county-plumbers">
     <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in Orange County</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
@@ -240,7 +240,7 @@ export default function PlumbersDirectory() {
     <h2 id="sacramento" className="text-2xl font-semibold text-gray-100">
     Sacramento
     </h2>
-    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/sacramento-plumbers">
     <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in Sacramento</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
@@ -265,7 +265,7 @@ export default function PlumbersDirectory() {
     <h2 id="silicon-valley" className="text-2xl font-semibold text-gray-100">
     Silicon Valley
     </h2>
-    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/silicon-valley-plumbers">
     <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in Silicon Valley</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
@@ -290,7 +290,7 @@ export default function PlumbersDirectory() {
     <h2 id="fresno" className="text-2xl font-semibold text-gray-100">
     Fresno or Central Valley
     </h2>
-    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/fresno-plumbers">
     <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in Fresno</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
