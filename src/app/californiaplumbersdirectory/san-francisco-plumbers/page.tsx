@@ -1,6 +1,6 @@
  
 import ToolCard from '@/components/tool-card'
-import { FileText, FileUp } from 'lucide-react'
+import { FileText, FileUp,  MapPin } from 'lucide-react'
 import Link from 'next/link';
 import Head from 'next/head';
 import PlumbersDirectoryCard from "../../../components/PlumbersDirectoryCard";
@@ -35,8 +35,30 @@ export default function PlumbersDirectory() {
   return (
     <div className=" border rounded-lg m-1 bg-slate-700   px-4 py-8">
       
-      <Link  className="bg-lime-300 p-4 rounded-xl shadow-lg" href="https://www.limeparrottech.site/"> Return to Homepage     
-      </Link>
+ 
+
+
+      <div className="flex justify-between items-center mb-6">
+        <Link 
+          className="bg-lime-300 p-4 rounded-xl shadow-lg mr-4" 
+          href="https://www.limeparrottech.site/"
+        >  
+          Return to Homepage      
+        </Link>
+        
+        <Link 
+          className="bg-blue-500 text-white p-4 rounded-xl shadow-lg flex items-center" 
+          href="/californiaplumbersdirectory"
+        >  
+          <MapPin className="mr-2" /> 
+          Explore All California Locations
+        </Link>
+      </div>
+
+
+
+
+
 
 
         <title>San Francisco Plumbers Directory</title>
@@ -48,7 +70,7 @@ export default function PlumbersDirectory() {
         />
       </Head>
 
-      <h1 className="text-3xl font-bold mb-4 text-white text-center">San Francisco Plumbers Directory</h1>
+      <h1 className="text-3xl font-bold mb-4 text-white text-center">San Francisco Plumbers</h1>
  
       <div className="  justify-center flex flex-wrap">
       
@@ -66,6 +88,9 @@ export default function PlumbersDirectory() {
 
       <div className="mb-6">
   <div className="flex items-center justify-between">
+
+ 
+
     <h2 className="text-2xl font-semibold text-gray-100">
       San Francisco, Bay Area
     </h2>
