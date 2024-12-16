@@ -4,31 +4,10 @@ import { FileText, FileUp } from 'lucide-react'
 import Link from 'next/link';
 import Head from 'next/head';
 import PlumbersDirectoryCard from "../../../components/PlumbersDirectoryCard";
+import {data_bay_area} from "../page_data_full_list";
  
 
-const posts = [
-  {
-    title: "24/7 Rooter & Plumbing",
-    desc: "Serving San Francisco Peninsula and San Mateo The Bay Area's Plumbing Experts",
-    img: "/plumbersdir/sf_1.jpg",
-    href: "https://www.24-7rooter.com/",
-  },
-  {
-    title: "Flow Masters Plumbing ",
-    desc: "San Francisco’s Top-Rated Plumbing Company",
-    img: "/plumbersdir/sf_1.jpg",
-    href: "https://flowmastersplumbing.com/",
-    },
-
-    {
-        title: "Smelly Mel’s Plumbing Inc  ",
-        desc: "Our fast response times mean that you never have to sit and wait around for a plumber again. ",
-        img: "/plumbersdir/sf_1.jpg",
-        href: "https://www.smellymelsplumbing.com/",
-        },
-
-
-];
+ 
 
 
 
@@ -60,7 +39,7 @@ export default function PlumbersDirectory() {
       </Link>
 
 
-        <title>California Plumbers Directory</title>
+        <title>San Francisco Plumbers Directory</title>
         <Head>
         <link
           rel="canonical"
@@ -70,7 +49,7 @@ export default function PlumbersDirectory() {
       </Head>
 
       <h1 className="text-3xl font-bold mb-4 text-white text-center">San Francisco Plumbers Directory</h1>
-      <h2 className="text-2xl font-semibold mb-6 text-white text-center">Find Trusted Plumbers in Your Area Today</h2>
+ 
       <div className="  justify-center flex flex-wrap">
       
  
@@ -85,10 +64,20 @@ export default function PlumbersDirectory() {
 
 
 
-      <h2 className="text-2xl font-semibold mb-6 text-gray-100 ">San Francisco, Bay Area</h2>
-      <div className="  sm:grid-cols-1 md:grid-cols-1 gap-6">
-      <PlumbersDirectoryCard posts={posts} />
-      </div>
+      <div className="mb-6">
+  <div className="flex items-center justify-between">
+    <h2 className="text-2xl font-semibold text-gray-100">
+      San Francisco, Bay Area
+    </h2>
+    <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
+ 
+    </Link>
+  </div>
+
+  <div >
+    <PlumbersDirectoryCard posts={data_bay_area} />
+  </div>
+</div>
       
 
 
