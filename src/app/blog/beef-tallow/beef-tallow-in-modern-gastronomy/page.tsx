@@ -24,7 +24,7 @@ export default function BeefTallowBlogPost() {
     
 
 
-      <article className="container rounded-lg shadow-xl  mx-auto px-6 py-12 max-w-4xl prose lg:prose-xl mx-auto p-6">
+      <article className="container rounded-lg shadow-xl   px-6 py-12 max-w-4xl prose lg:prose-xl mx-auto p-6">
   <h1 className="text-3xl font-bold mb-4 text-center">Beef Tallow in Modern Gastronomy: A Chef's Secret Ingredient</h1>
 
   <p className="mb-6">
