@@ -68,6 +68,7 @@ export default function LoopEarplugBlogPost() {
             <li><strong>Versatile Use:</strong> Suitable for different environments such as concerts, motorcycling, or simply focusing in a busy office.</li>
             <li><strong>Noise Sensitivity Management:</strong> Ideal for individuals who need hearing protection without completely isolating themselves from their surroundings.</li>
           </ul>
+          
           <Link    className="flex justify-center" href="    https://loop-earplugs.sjv.io/21jk6a"> 
 
           <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
