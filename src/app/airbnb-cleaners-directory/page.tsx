@@ -25,16 +25,16 @@ export default function PlumbersDirectory() {
         <Head>
         <link
           rel="canonical"
-          href="https://www.limeparrottech.site/californiaplumbersdirectory"
+          href="https://www.limeparrottech.site/airbnb-cleaners-directory"
           key="canonical"
         />
       </Head>
 
-      <h1 className="text-3xl font-bold mb-4 text-white text-center">Airbnb Cleaners Directory</h1>
-      <h2 className="text-2xl font-semibold mb-6 text-white text-center">Find Trusted Airbnb Cleaners in Los Angeles</h2>
+      <h1 className="text-3xl font-bold mb-4 text-black text-center">Airbnb Cleaners Directory</h1>
+      <h2 className="text-2xl font-semibold mb-6 text-black text-center">Find Trusted Airbnb Cleaners in Los Angeles</h2>
       <div className="  justify-center flex flex-wrap">
       
-      <p className="   text-lg w-7/12 text-gray-100 mb-8 text-center">
+      <p className="   text-lg w-7/12 text-gray-800 mb-8  text-center">
       Don’t let turnover hassles disrupt your hosting success! Our directory connects you with experienced Airbnb cleaners who deliver top-notch service when you need it most. From quick turnovers to deep cleans, find dependable experts who are just a click away.
 
 
@@ -46,7 +46,7 @@ export default function PlumbersDirectory() {
       <div className="w-full flex justify-center space-x-4 mb-12">
     <a
       href="#bay-area"
-      className="px-6 py-2 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 focus:outline-none"
+      className="px-6 py-2 bg-blue-500 text-black text-sm rounded hover:bg-blue-600 focus:outline-none"
     >
       Los Angeles
     </a>
@@ -77,7 +77,7 @@ export default function PlumbersDirectory() {
     Los Angeles
     </h2>
     <Link href="https://www.limeparrottech.site/californiaplumbersdirectory/san-francisco-plumbers">
-    <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+    <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-black rounded hover:bg-blue-600 focus:outline-none">
       <span className="relative z-10">Check all plumbers in Los Angeles Area</span>
       <span className="absolute inset-0 rounded border-2 border-transparent animate-borderTrail"></span>
     </button>
