@@ -24,7 +24,7 @@ export default function BlogPost() {
 
     <div className="min-h-screen bg-gradient-to-b from-red-100 to-blue-300 text-gray-800 font-serif  rounded-lg shadow-xl ">
 
-<title>Tailscan Blog Post - LimeParrot Tech.Site  </title>
+<title>How to Develop with Tailwind CSS - Tailscan Blog Post - LimeParrot Tech.Site  </title>
 <meta
   name="description"
   content="How to Develop with Tailwind CSS."

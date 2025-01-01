@@ -23,6 +23,23 @@ export default function BlogPost() {
     
 
     <div className="min-h-screen bg-gradient-to-b from-blue-200 to-lime-100 text-gray-800 font-serif  rounded-lg shadow-xl ">
+
+
+
+
+
+<title>Professional Airbnb Cleaning - Airbnb Cleaners Blog Post - LimeParrot Tech.Site  </title>
+<meta
+  name="description"
+  content="The Essential Role of Airbnb Cleaners in Short-Term Rentals."
+/>
+
+
+
+
+
+
+
       <header className="bg-gray-700 shadow-md ">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-3xl font-bold text-gray-200">Airbnb Cleaners Blog by LimeParrot Tech</h1>
