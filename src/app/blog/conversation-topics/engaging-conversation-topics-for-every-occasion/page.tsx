@@ -27,8 +27,7 @@ export default function BlogPost() {
 <title>40 Engaging Conversation Topics for Every Occasion - LimeParrot Tech.Site  </title>
 <meta
   name="description"
-  content="Build, design and debug your Tailwind CSS website visually
-with Tailscan, right within the browser."
+  content="Engaging Conversation Topics for Every Occasion."
 />
 
 
@@ -122,7 +121,7 @@ with Tailscan, right within the browser."
 
       <footer className="bg-gray-700 text-white mt-12 py-8">
         <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2024 Tailscan Blog by LimeParrot Tech. Crafting knowledge with compassion and technology.</p>
+          <p>&copy; 2025 Conversation Topics for Every Occasion Blog by LimeParrot Tech. Crafting knowledge with compassion and technology.</p>
         </div>
       </footer>
     </div>
