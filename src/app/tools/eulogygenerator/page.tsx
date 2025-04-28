@@ -54,7 +54,7 @@ export default function EulogyForm() {
 
 
 
-  useEffect(() => {
+/*   useEffect(() => {
     const checkCredits = async () => {
       if (!user?.id) return;
   
@@ -85,7 +85,7 @@ export default function EulogyForm() {
     };
   
     checkCredits();
-  }, [user?.id]);
+  }, [user?.id]); */
   
  
 
