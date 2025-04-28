@@ -71,36 +71,37 @@ export async function POST(req: Request) {
 
 
     // store payload in DB (users)
-    const sql = neon(process.env.DATABASE_URL!); // Add non-null assertion or check
-    const initialCredits = parseInt(process.env.INITIAL_USER_CREDITS || '100', 10);
-   
-    if (eventType === "user.created") {
-      const clerkUserId = payload.data.id;
-      if (!clerkUserId) {
-         console.error("Clerk User ID missing in payload");
-         return new Response('Error: Bad webhook payload', { status: 400 });
-      }
-   
-      try {
-        // Optional but Recommended: Check if user already exists (idempotency)
-        const existingUser = await sql`SELECT 1 FROM user_credits WHERE clerk_user_id = ${clerkUserId} LIMIT 1`;
-   
-        if (existingUser.length === 0) {
-             await sql`
-                 INSERT INTO user_credits (clerk_user_id, credits)
-                 VALUES (${clerkUserId}, ${initialCredits})
-             `;
-             console.log(`Successfully inserted credits for user ${clerkUserId}`);
-        } else {
-            console.log(`User ${clerkUserId} already exists in credits table. Skipping insertion.`);
-        }
-   
-      } catch (error) {
-        console.error("Error inserting user credits into database:", error);
-        // Consider returning 500 status if DB operation fails
-        return new Response('Error: Database operation failed', { status: 500 });
-      }
-    }
+const sql = neon(process.env.DATABASE_URL!); // Add non-null assertion or check
+ const initialCredits = parseInt(process.env.INITIAL_USER_CREDITS || '100', 10);
+
+ if (eventType === "user.created") {
+   const clerkUserId = payload.data.id;
+   if (!clerkUserId) {
+      console.error("Clerk User ID missing in payload");
+      return new Response('Error: Bad webhook payload', { status: 400 });
+   }
+
+   try {
+     // Optional but Recommended: Check if user already exists (idempotency)
+     const existingUser = await sql`SELECT 1 FROM user_credits WHERE clerk_user_id = ${clerkUserId} LIMIT 1`;
+
+     if (existingUser.length === 0) {
+          await sql`
+              INSERT INTO user_credits (clerk_user_id, credits)
+              VALUES (${clerkUserId}, ${initialCredits})
+          `;
+          console.log(`Successfully inserted credits for user ${clerkUserId}`);
+     } else {
+         console.log(`User ${clerkUserId} already exists in credits table. Skipping insertion.`);
+     }
+
+   } catch (error) {
+     console.error("Error inserting user credits into database:", error);
+     // Consider returning 500 status if DB operation fails
+     return new Response('Error: Database operation failed', { status: 500 });
+   }
+ }
+}
 
 
 
