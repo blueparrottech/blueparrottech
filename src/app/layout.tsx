@@ -34,7 +34,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "LimeParrot Tech.Site",
-  description: "Interesting tools and content for entrepeneurs and businesses",
+  description: "Tools and content for entrepeneurs and businesses",
 };
 
 
@@ -65,18 +65,15 @@ export default function RootLayout({
     <ClerkProvider 
     dynamic
     afterSignOutUrl="./">
+      
     <html lang="en">
 
 
-
-
-
-    <head>
+              <head>
                 <Script
                   async
                   src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
                 />
-
                 <Script id="google-analytics">
                   {`
                     window.dataLayer = window.dataLayer || [];
@@ -84,11 +81,10 @@ export default function RootLayout({
                     gtag('js', new Date());
                     gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}',{
                     page_path: window.location.pathname,                    
-          });
+                     });
                   `}
                 </Script>   
-
-          </head>
+              </head>
 
 
       <body
@@ -99,13 +95,10 @@ export default function RootLayout({
             <SignInButton />
           </SignedOut>
 
-
           <SignedIn>
             <UserButton />
           </SignedIn>
         {children}
-
-
 
         </CSPostHogProvider>
 
