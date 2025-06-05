@@ -3,11 +3,7 @@ import ToolCard from '@/components/tool-card'
 import { FileText, FileUp } from 'lucide-react'
 import Link from 'next/link';
 import Head from 'next/head';
-import PlumbersDirectoryCard from "../../components/PlumbersDirectoryCard";
-import {data_bay_area,data_la_county} from "./page_data_not_full_list";
  
- 
-
  
  
 
