@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Heart, Feather, Users, Clock, Star } from 'lucide-react'
 import Image from 'next/image'
 import Link from "next/link"
+import Head from 'next/head';
  
 
 
@@ -40,6 +41,14 @@ export default function BlogPost() {
         </div>
       </header>
 
+
+        <Head>
+        <link
+          rel="canonical"
+          href="https://www.limeparrottech.site/blog/genfoo/ai-chatbot-with-cool-design"
+          key="canonical"
+        />
+      </Head>
       
 
       
