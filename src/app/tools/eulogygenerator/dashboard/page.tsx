@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { format } from 'date-fns'
 
 interface Eulogy {
@@ -17,7 +17,7 @@ interface Eulogy {
 
 export default function EulogyDashboard() {
   const router = useRouter()
-  const searchParams = useSearchParams()
+ 
   const [eulogies, setEulogies] = useState<Eulogy[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -57,23 +57,7 @@ export default function EulogyDashboard() {
           <p className="mt-2 text-gray-600">View and manage all your created eulogies</p>
         </div>
 
-        {/* Success Message (show only when redirected from form submission) */}
-        {searchParams.get('new') && (
-          <div className="mb-8 bg-green-50 p-4 rounded-md">
-            <div className="flex">
-              <div className="flex-shrink-0">
-                <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="ml-3">
-                <p className="text-sm font-medium text-green-800">
-                  Eulogy successfully created!
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
+ 
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {eulogies.map((eulogy) => (
