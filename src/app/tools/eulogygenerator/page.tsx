@@ -11,11 +11,11 @@ import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Info } from 'lucide-react'
+ 
 
 import { FormData, initialFormData } from './types'
 
-import { useSearchParams, useRouter } from 'next/navigation'  // Note: from 'next/navigation', not 'next/router'
+import {  useRouter } from 'next/navigation'  // Note: from 'next/navigation', not 'next/router'
 
  import  RemainingCreditsCard   from "../../../components/RemainingCreditsCard"
 
