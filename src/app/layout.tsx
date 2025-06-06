@@ -61,10 +61,7 @@ export default function RootLayout({
 
 
 
-
-    <ClerkProvider 
-    dynamic
-    afterSignOutUrl="./">
+ 
       
     <html lang="en">
 
@@ -91,19 +88,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <CSPostHogProvider>
 
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+ 
         {children}
 
         </CSPostHogProvider>
 
       </body>
     </html>
-    </ClerkProvider>
+ 
   );
 }

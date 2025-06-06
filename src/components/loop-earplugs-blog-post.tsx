@@ -38,6 +38,13 @@ export default function LoopEarplugBlogPost() {
     </button>
     </Link>
 
+
+            <Link    href="https://www.genfoo.com">
+    <button className="relative overflow-hidden ml-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">
+      <span className="relative z-10">Try GenFoo, AI chat with skins</span>
+      <span className="absolute inset-0 rounded border-4 border-transparent animate-borderTrail"></span>
+    </button>
+    </Link>
     </ul>
 
 
