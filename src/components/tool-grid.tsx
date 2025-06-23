@@ -19,6 +19,20 @@ export default function ToolGrid() {
 />
 
 
+
+<Link  href="https://www.genfoo.com">
+      <ToolCard
+      bgColor='bg-lime-300'
+        title="GenFoo"
+        description="Discover a minimalist AI chat with skins."
+        content="Discover a minimalist AI chat with skins."
+        buttonText="AI chat"
+        icon={FileUp}
+      />
+ </Link>
+
+
+
 <Link  href="./tools/eulogygenerator">
       <ToolCard
       bgColor='bg-lime-300'
@@ -107,7 +121,16 @@ bgColor='bg-slate-300'
 
 
 
-
+ <Link href="https://www.detallesjugueteria.com.ar"> 
+<ToolCard
+bgColor='bg-red-300'
+        title="Detalles Almacén de Juguetes San Luis Argentina"
+        description="Detalles Almacén de Juguetes."
+        content="Detalles Almacén de Juguetes."
+        buttonText="Detalles Almacén de Juguetes"
+        icon={FileUp}
+      />
+ </Link>
 
     </div>
   )
